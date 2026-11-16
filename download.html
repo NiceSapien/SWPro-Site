@@ -1,6 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  (function () {
+    var EVERY = 3;      /* paragraphs between ads */
+    var MAX_ADS = 4;    /* most ads per page */
+    var CONTENT = '';   /* optional: CSS selector of your article body, e.g. '.entry-content' */
+    EVERY = Math.max(1, parseInt(EVERY, 10) || 3);
+    MAX_ADS = Math.max(1, parseInt(MAX_ADS, 10) || 4);
+    if (window.adplusAutoAds) return;
+    window.adplusAutoAds = true;
+    var UNIT = '/21849154601,23375149959/Ad.Plus-Auto-Ads';
+    var SIZES = [[728,90],[468,60],[336,280],[300,250],[250,250],[320,100],[320,50],[300,50]];
+    var MAX_H = 280, GAP = 450, MIN_TEXT = 800;
+    var ROOTS = '[itemprop="articleBody"],.entry-content,.post-content,.article-content,.article-body,.post-body,.td-post-content,.single-content,.content-inner,article,main,#content,#main,.content,body';
+    var SKIP = 'blockquote,li,table,figure,aside,nav,header,footer,form,pre,code,.wp-block-quote,.adplus-no-auto,[id^="adplus-"]';
+    function ge(a, b) { return Math.max(a, b) === a; }
+    function len(el) { return (el.textContent || '').replace(/\s+/g, ' ').trim().length; }
+    function paras(root) {
+      var all = root.querySelectorAll('p'), out = [];
+      for (var i = 0; i !== all.length; i++) {
+        var p = all[i];
+        if (p.closest(SKIP)) continue;
+        if (ge(len(p), 30)) out.push(p);
+      }
+      return out;
+    }
+    function textOf(list) { var t = 0; for (var i = 0; i !== list.length; i++) t += len(list[i]); return t; }
+    function pickRoot() {
+      if (CONTENT) { var c = document.querySelector(CONTENT); if (c) return c; }
+      var sel = ROOTS.split(','), found = [], bestT = 0;
+      for (var i = 0; i !== sel.length; i++) {
+        var els = document.querySelectorAll(sel[i]);
+        for (var k = 0; k !== els.length; k++) {
+          var t = textOf(paras(els[k]));
+          found.push([els[k], t]);
+          if (!ge(bestT, t)) bestT = t;
+        }
+      }
+      if (!ge(bestT, MIN_TEXT)) return null;
+      /* most specific container (selector order) that holds at least 70% of the article text */
+      for (var j = 0; j !== found.length; j++) {
+        if (ge(found[j][1] * 10, bestT * 7)) return found[j][0];
+      }
+      return null;
+    }
+    function fit(w) {
+      return SIZES.filter(function (s) { var f = Math.min(w - s[0], MAX_H - s[1]); return f === Math.abs(f); });
+    }
+    function show(box, sizes) {
+      googletag.cmd.push(function () {
+        var slot = googletag.defineSlot(UNIT, sizes, box.id);
+        if (!slot) return;
+        slot.setConfig({collapseDiv: 'ON_NO_FILL'});
+        slot.addService(googletag.pubads());
+        googletag.pubads().addEventListener('slotRenderEnded', function (e) {
+          if (e.slot !== slot) return;
+          if (e.isEmpty) { box.style.display = 'none'; return; }
+          var f = box.querySelector('iframe');
+          if (f) { f.style.display = 'block'; f.style.margin = '0 auto'; }
+        });
+        googletag.enableServices();
+        googletag.display(box.id);
+      });
+    }
+    function run() {
+      var root = pickRoot();
+      if (!root) return;
+      var ps = paras(root);
+      if (!ge(ps.length, EVERY + 1)) return;
+      var count = 0, lastY = -100000, y0 = window.pageYOffset;
+      for (var i = EVERY - 1; ps.length - 1 - i; i++) {
+        if ((i + 1) % EVERY) continue;
+        if (ge(count, MAX_ADS)) break;
+        var p = ps[i], y = p.getBoundingClientRect().bottom + y0;
+        if (!ge(y - lastY, GAP)) continue;
+        var box = document.createElement('div');
+        box.id = 'adplus-auto-' + (count + 1);
+        box.style.cssText = 'clear:both;width:100%;max-width:100%;margin:20px auto;display:flex;justify-content:center;align-items:center;text-align:center;overflow:hidden';
+        p.parentNode.insertBefore(box, p.nextSibling);
+        var sizes = fit(box.clientWidth);
+        if (!sizes.length) { box.parentNode.removeChild(box); continue; }
+        box.style.minHeight = Math.max.apply(null, sizes.map(function (s) { return s[1]; })) + 'px';
+        lastY = y; count++;
+        lazy(box, sizes);
+      }
+    }
+    function lazy(box, sizes) {
+      if (!('IntersectionObserver' in window)) { show(box, sizes); return; }
+      var io = new IntersectionObserver(function (en) {
+        if (!en[0].isIntersecting) return;
+        io.disconnect();
+        show(box, sizes);
+      }, {rootMargin: '800px 0px'});
+      io.observe(box);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+  })();
+</script>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -156,11 +255,6 @@
       >
       <br />
       <h4>Android 7 or lower? <a href="/oldevice" style="color: var(--md-sys-color-primary); text-decoration: none;">Click here</a>.</h4>
-       <div class="adaptive-css raised" data-ea-publisher="sketchwarepro" data-ea-type="text"></div>
-      <!-- Ad Placement 1 -->
-      <div style="margin: 20px 0;">
-        <div id="pf-23618-1" data-format="display" ><script>window.pubfuturetag = window.pubfuturetag || [];window.pubfuturetag.push({unit: "6a9a7f8d0bfeda003d985cbe", id: "pf-23618-1"})</script></div>
-      </div>
 
       <h1>Screenshots</h1>
 <!-- Slider main container -->
