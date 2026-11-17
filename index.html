@@ -152,10 +152,7 @@ getRepoData();
 </div>
   </nav>
   </header>
-  <div id="kaoban">
-    <span class="material-symbols-outlined" style="font-size: 18px; vertical-align: middle;">warning</span>
-    <a href="https://keepandroidopen.org/" target="_blank">Android will become a locked down platform for everyone in 2027. Learn more...</a>
-  </div>
+
 <!-- this would work as the backdrop when navbar is open-->
 <div class="backdrop-container" id="backdrop" onclick=" if(navOpen){closeNav()}"></div>
 
@@ -181,26 +178,76 @@ getRepoData();
 <a onclick="openLink('https://sketchware-pro.vercel.app/about')"><span class="material-symbols-outlined">warning</span>Disclaimer</a>
 </div>
 </div>
-  <div id="main">
-    <div id="sec1Text">
-        <h1>Sketchware <a style="color: var(--md-sys-color-primary)">Pro</a>. Epic. Inside</u> out.</h1>
-        <p class="hideDesk">
-            No code, all awesome. Craft epic apps with Sketchware Pro's magical blocks.
-        </p>
-       <div style="display: flex;">
-        <a href="#main5">
-         <md-filled-button
-           style="z-index: 1; margin-right: 12px;" class="hideDesk">
+  <section id="main" class="hero">
+    <div class="hero-backdrop" aria-hidden="true"></div>
+
+    <div id="sec1Text" class="hero-content">
+      <h1 class="hero-title">
+        Sketchware <span class="hero-accent">Pro</span>. Engineered to Amaze.
+      </h1>
+
+      <p class="hero-subtitle">
+        No code, all awesome. Craft epic apps with Sketchware Pro's magical blocks.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/download">
+          <md-filled-button class="hero-cta-primary">
+            <span class="material-symbols-outlined" slot="icon">download</span>
             Get Started
           </md-filled-button>
         </a>
-          <a href="/docs">
-            <md-outlined-button>View Docs</md-outlined-button>
-          </a>
-        </div>
-        </div>
-      <img class="header-image" src="/img/tabshot.png" alt="Header image">
+        <a href="/docs">
+          <md-outlined-button class="hero-cta-secondary">
+            <span class="material-symbols-outlined" slot="icon">menu_book</span>
+            View Docs
+          </md-outlined-button>
+        </a>
+      </div>
+
+      <div class="hero-highlights">
+        <span><span class="material-symbols-outlined">extension</span>Drag &amp; Drop Blocks</span>
+        <span><span class="material-symbols-outlined">smartphone</span>On-Device APK Build</span>
+        <span><span class="material-symbols-outlined">code</span>Java &amp; XML Export</span>
+      </div>
     </div>
+
+    <div class="hero-showcase">
+      <picture>
+        <source media="(max-width: 950px)" srcset="/img/mockup.webp">
+        <img class="header-image" src="/img/space.webp" alt="Sketchware Pro showcase">
+      </picture>
+    </div>
+
+    <script>
+      (function () {
+        const header = document.querySelector('header');
+        const updateHeader = () => {
+          if (!header) return;
+          header.classList.toggle('scrolled', window.scrollY > 10);
+        };
+        updateHeader();
+        window.addEventListener('scroll', updateHeader, { passive: true });
+
+        const showcase = document.querySelector('#main .hero-showcase');
+        const img = showcase && showcase.querySelector('img');
+        if (!showcase || !img) return;
+        const reveal = () => {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              showcase.classList.add('is-loaded');
+            });
+          });
+        };
+        if (img.complete && img.naturalWidth > 0) {
+          reveal();
+        }
+        img.addEventListener('load', reveal);
+        img.addEventListener('error', reveal);
+      })();
+    </script>
+  </section>
+
     <div id="main-2">
    <div id="sec2">
       <h2>Fast & Easy Apps: Sketchware <a style="color: rgb(77, 119, 184);">Pro</a> vs. <a style="color: #3DDC84;">Android</a> Studio</h2><br>
