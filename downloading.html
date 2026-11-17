@@ -16,6 +16,52 @@
         })(window, document, "script", "dataLayer", "GTM-NFZPPW6N");
     </script>
     <!-- End Google Tag Manager -->
+     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  var anchorSlot;
+
+  googletag.cmd.push(function () {
+    // 1. Define the 3 banner slots
+    googletag
+      .defineSlot("/21849154601,23375149959/Ad.Plus-300x250", [300, 250], "300x250-1")
+      .addService(googletag.pubads());
+
+    googletag
+      .defineSlot("/21849154601,23375149959/Ad.Plus-300x250", [300, 250], "300x250-2")
+      .addService(googletag.pubads());
+
+    googletag
+      .defineSlot("/21849154601,23375149959/Ad.Plus-300x250", [300, 250], "300x250-3")
+      .addService(googletag.pubads());
+
+    // 2. Define the Anchor slot (skipping homepage and 404)
+    var path = window.location.pathname;
+    if (path !== "/" && path !== "/index.html" && !window.is404) {
+      anchorSlot = googletag.defineOutOfPageSlot(
+        "/21849154601,23375149959/Ad.Plus-Anchor-Small",
+        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+      );
+      if (anchorSlot) {
+        anchorSlot.addService(googletag.pubads());
+      }
+    }
+
+    // 3. Enable services ONCE for all slots
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+
+    if (anchorSlot) {
+      googletag.display(anchorSlot);
+    }
+  });
+
+  setInterval(function () {
+    if (anchorSlot && !document.hidden) {
+      googletag.pubads().refresh([anchorSlot]);
+    }
+  }, 30000);
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" href="/css/global-min.css" as="style" />
@@ -407,19 +453,13 @@
         </section>
 
         <!-- Ad Placement 1 -->
-        <div style="margin: 20px auto; text-align: center">
-            <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-            <div id="300x250-1">
-                <script>
-                    window.googletag = window.googletag || { cmd: [] };
-                    googletag.cmd.push(function () {
-                        googletag.defineSlot('/21849154601,23375149959/Ad.Plus-300x250', [300, 250], '300x250-1').addService(googletag.pubads());
-                        googletag.enableServices();
-                        googletag.display('300x250-1');
-                    });
-                </script>
-            </div>
-        </div>
+<div class="ad-slot-center">
+  <div id="300x250-1" style="min-width: 300px; min-height: 250px;">
+    <script>
+      googletag.cmd.push(function () { googletag.display("300x250-1"); });
+    </script>
+  </div>
+</div>
 
         <!-- Post-Download Content Grid -->
         <div class="content-grid">
@@ -572,20 +612,13 @@
             </section>
 
             <!-- Ad Placement 2 -->
-            <div style="margin: 20px auto; text-align: center">
-                <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-                    crossorigin="anonymous"></script>
-                <div id="300x250-2">
-                    <script>
-                        window.googletag = window.googletag || { cmd: [] };
-                        googletag.cmd.push(function () {
-                            googletag.defineSlot('/21849154601,23375149959/Ad.Plus-300x250', [300, 250], '300x250-2').addService(googletag.pubads());
-                            googletag.enableServices();
-                            googletag.display('300x250-2');
-                        });
-                    </script>
-                </div>
-            </div>
+<div class="ad-slot-center">
+  <div id="300x250-2" style="min-width: 300px; min-height: 250px;">
+    <script>
+      googletag.cmd.push(function () { googletag.display("300x250-2"); });
+    </script>
+  </div>
+</div>
 
             <!-- Support the Maintainers -->
             <section class="m3-card full-span">

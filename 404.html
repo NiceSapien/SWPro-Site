@@ -2,6 +2,22 @@
 <html lang="en">
 
 <head>
+      <script>
+    // this script blocks footer ad(s) here
+  window.googletag = window.googletag || { cmd: [] };
+  // Intercept defineOutOfPageSlot on this page so the anchor ad never creates or loads
+  var origPush = window.googletag.cmd.push;
+  window.googletag.cmd.push = function(fn) {
+    return origPush.call(window.googletag.cmd, function() {
+      var origDefine = googletag.defineOutOfPageSlot;
+      googletag.defineOutOfPageSlot = function(path, format) {
+        if (path && path.indexOf('Ad.Plus-Anchor') !== -1) return null;
+        return origDefine.apply(this, arguments);
+      };
+      fn();
+    });
+  };
+</script>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -19,7 +35,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" href="css/global-min.css" as="style">
     <link rel="stylesheet" href="css/global-min.css">
-    <title>Team</title>
+    <title>404 Not Found</title>
     <link rel="stylesheet" href="/css/light.css" />
     <link rel="stylesheet" href="/css/dark.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
