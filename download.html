@@ -2,16 +2,23 @@
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-NFZPPW6N');</script>
-  <!-- End Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NFZPPW6N");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" href="css/global-min.css" as="style" />
-    <link rel="stylesheet" href="css/global-min.css" />
+    <link rel="preload" href="/css/global-min.css" as="style" />
+    <link rel="stylesheet" href="/css/global-min.css" />
     <title>Download Sketchware Pro</title>
     <link rel="icon" type="image/x-icon" href="/img/logo.webp" />
     <link rel="stylesheet" href="/css/light.css" />
@@ -19,13 +26,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400&family=Poppins:ital,wght@0,500&family=Roboto:ital,wght@0,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500&family=Poppins:ital,wght@0,500&family=Roboto:ital,wght@0,400;0,500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -33,12 +39,390 @@
       rel="stylesheet"
     />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      a,
+      md-filled-button,
+      md-outlined-button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      a:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      .logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        padding: 0;
+        margin: 0;
+      }
+
       md-divider {
         padding-left: 10px;
         padding-right: 10px;
         width: 100%;
         box-sizing: border-box;
         color: var(--md-sys-color-outline);
+      }
+
+      .download-wrapper {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 84px 16px 32px 16px;
+        box-sizing: border-box;
+      }
+
+      /* Hero Section */
+      .hero-download {
+        text-align: center;
+        padding: 40px 24px;
+        margin-bottom: 24px;
+        border-radius: 28px;
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface-container);
+      }
+
+      .download-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+
+      .hero-download h1 {
+        font-size: 3.4rem;
+        margin: 0 0 12px 0;
+        line-height: 1.15;
+      }
+
+      .hero-download p {
+        font-size: 1.15rem;
+        max-width: 620px;
+        margin: 0 auto 24px auto;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* M3 Cards */
+      .m3-card {
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface-container);
+        border-radius: 24px;
+        padding: 28px;
+        text-align: left;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+      }
+
+      .m3-card p {
+        font-size: 1.08rem;
+        line-height: 1.6;
+        margin: 0;
+        opacity: 0.92;
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .card-header-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .m3-card h2 {
+        font-size: 1.85rem;
+        margin: 0;
+      }
+
+      .card-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      /* Screenshots Carousel */
+      .swiper-controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .swiper-nav-btn {
+        position: static;
+        width: 42px;
+        height: 42px;
+        margin: 0;
+        border-radius: 50%;
+        background-color: var(
+          --md-sys-color-surface-container-high,
+          rgba(128, 128, 128, 0.12)
+        );
+        color: var(--md-sys-color-primary);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.15s ease, transform 0.15s ease;
+      }
+
+      .swiper-nav-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .swiper-nav-btn::after {
+        content: none;
+      }
+
+      .swiper {
+        padding: 4px 0 28px 0;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 24px;
+        border: 1px solid rgba(128, 128, 128, 0.18);
+      }
+
+      .swiper-pagination-bullet-active {
+        background: var(--md-sys-color-primary);
+      }
+
+      /* Two-Column Info Grid */
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .content-grid .m3-card {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Changelog List */
+      .changelog-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .changelog-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 16px;
+        background-color: var(
+          --md-sys-color-surface-container-high,
+          rgba(128, 128, 128, 0.08)
+        );
+        font-size: 1.04rem;
+        line-height: 1.5;
+      }
+
+      .changelog-item .material-symbols-outlined {
+        color: var(--md-sys-color-primary);
+        font-size: 22px;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+
+      /* Release vs Nightly Comparison */
+      .build-boxes {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .build-box {
+        padding: 16px 18px;
+        border-radius: 18px;
+        background-color: var(
+          --md-sys-color-surface-container-high,
+          rgba(128, 128, 128, 0.08)
+        );
+      }
+
+      .build-box-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 6px;
+      }
+
+      .build-box-title {
+        font-weight: 500;
+        font-size: 1.12rem;
+      }
+
+      .build-tag {
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 3px 10px;
+        border-radius: 9999px;
+      }
+
+      .build-tag.stable {
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+      }
+
+      .build-tag.nightly {
+        background-color: rgba(128, 128, 128, 0.16);
+        color: inherit;
+      }
+
+      .build-box p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.55;
+        opacity: 0.9;
+      }
+
+      /* Bottom CTA Banner */
+      #main5 {
+        margin: 24px 0 8px 0;
+      }
+
+      #sec5 {
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface-container);
+        border-radius: 28px;
+        padding: 44px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        text-align: left;
+      }
+
+      #sec5 p {
+        font-size: 3.4rem;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+      }
+
+      .material-button {
+        background-color: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-primary);
+        border: 1px solid var(--md-sys-color-primary-container);
+        border-radius: 9999px;
+        padding: 20px 34px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        transition: transform 0.15s ease, background-color 0.15s ease;
+      }
+
+      .material-button:hover {
+        background-color: var(--md-sys-color-primary-container-dim);
+        color: var(--md-sys-color-primary);
+        border-color: var(--md-sys-color-on-secondary-container);
+        transform: translateY(-2px);
+      }
+
+      .ad-slot-center {
+        margin: 22px auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      @media (max-width: 950px) {
+        .hero-download {
+          padding: 28px 18px;
+        }
+        .hero-download h1 {
+          font-size: 2.2rem;
+        }
+        .hero-download p {
+          font-size: 1rem;
+        }
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+        .m3-card {
+          padding: 20px;
+        }
+        .m3-card h2 {
+          font-size: 1.5rem;
+        }
+        #sec5 {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 28px 22px;
+        }
+        #sec5 p {
+          font-size: 2.3rem;
+        }
+        .material-button {
+          font-size: 1.2rem;
+          padding: 16px 26px;
+        }
       }
     </style>
     <script>
@@ -56,53 +440,54 @@
         document.getElementById("main").style.opacity = "1";
         navOpen = false;
       }
-      function openLink(link) {
-        window.location.href = link;
-      }
     </script>
+  </head>
 
-</head>
   <body id="bodi" class="light" style="width: 100%; box-sizing: border-box">
-   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFZPPW6N"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NFZPPW6N"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header>
       <nav>
         <div class="header-container">
           <div class="logo">
-            <img src="img/logo.webp" alt="SW Pro Logo" onclick="openNav()" />
-            <div style="display: flex; justify-content: center">
-              <p
-                style="margin-left: 8px; font-weight: 400"
-                onclick="location.href = '/';"
-              >
-                Sketchware Pro
-              </p>
+            <img src="/img/logo.webp" alt="SW Pro Logo" onclick="openNav()" />
+            <div style="display: flex; justify-content: center; align-items: center">
+              <a href="/" class="logo-link">
+                <p style="margin-left: 8px; font-weight: 400">
+                  Sketchware Pro
+                </p>
+              </a>
             </div>
           </div>
           <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="https://sketchware-pro.vercel.app/docs">Docs</a></li>
             <li><a href="https://sketchware-pro.vercel.app/blog">Blog</a></li>
-            <li>
-              <a href="/team">About</a>
-            </li>
+            <li><a href="/team">About</a></li>
           </ul>
         </div>
       </nav>
     </header>
-    <!-- this would work as the backdrop when navbar is open-->
+
+    <!-- Backdrop when mobile navbar is open -->
     <div
       class="backdrop-container"
       id="backdrop"
-      onclick=" if(navOpen){closeNav()}"
+      onclick="if(navOpen){closeNav()}"
     ></div>
 
-    <!--the would be the drawer and it's content-->
+    <!-- Mobile Navigation Drawer -->
     <div id="mySidenav" class="sidenav-container">
       <span class="drawer-close-button">
-        <!--icon for closing of the navbar-->
         <div style="display: flex; width: 100%">
           <img
             src="/img/swpro.svg"
@@ -117,291 +502,359 @@
         <a href="/">
           <span class="material-symbols-outlined">home</span> Home</a
         >
-        <a onclick='openLink("/download");' id="homeLink"
+        <a href="/download" id="homeLink"
           ><span class="material-symbols-outlined">get_app</span>Download</a
         >
-        <a onclick="openLink('https://sketchware-pro.vercel.app/docs')"
+        <a href="https://sketchware-pro.vercel.app/docs"
           ><span class="material-symbols-outlined">menu_book</span>Docs</a
         >
-        <a onclick="openLink('https://sketchware-pro.vercel.app/blog')"
+        <a href="https://sketchware-pro.vercel.app/blog"
           ><span class="material-symbols-outlined">library_books</span>Blog</a
         >
         <md-divider></md-divider>
         <p>About</p>
-        <a onclick="openLink('/team')"
+        <a href="/team"
           ><span class="material-symbols-outlined">groups</span>Team</a
         >
-        <a onclick="openLink('/about')"
+        <a href="/about"
           ><span class="material-symbols-outlined">warning</span>Disclaimer</a
         >
       </div>
     </div>
-    
-    <div
-      id="main"
-      style="padding-top: 64px; padding-bottom: 12px; text-align: center"
-    >
-    <div id="sec1">
-      <h1 id="download" style="margin-bottom: 0px;">Download</h1>
-      <p style="font-size: 1.2rem;">You can download the latest builds of Sketchware Pro from here.</p>
-      <md-filled-button
-        style="margin: 8px 12px"
-        onclick="openLink('https://github.com/Sketchware-Pro/Sketchware-Pro/releases/download/v7.0.0/app-release.apk');"
-        >Download APK</md-filled-button
-      >
-      <md-outlined-button
-        style="margin: 8px 12px"
-        onclick="location.href = 'https://nightly.link/Sketchware-Pro/Sketchware-Pro/workflows/android/main'"
-        >Nightly</md-outlined-button
-      >
-      <br />
-      <h4>Android 7 or lower? <a href="/oldevice" style="color: var(--md-sys-color-primary); text-decoration: none;">Click here</a>.</h4>
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-<div id="300x250-1">
-<script>
-  window.googletag = window.googletag || {cmd: []};
-  googletag.cmd.push(function() {
-    googletag.defineSlot('/21849154601,23375149959/Ad.Plus-300x250', [300, 250], '300x250-1').addService(googletag.pubads());
-    googletag.enableServices();
-    googletag.display('300x250-1');
-  });
-</script>
-</div>
 
-      <h1>Screenshots</h1>
-<!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide"><img src="/img/screenshots/1.webp" alt="Screenshot 1"></div>
-    <div class="swiper-slide"><img src="/img/screenshots/2.webp" alt="Screenshot 2"></div>
-    <div class="swiper-slide"><img src="/img/screenshots/3.webp" alt="Screenshot 3"></div>
-    <div class="swiper-slide"><img src="/img/screenshots/4.webp" alt="Screenshot 4"></div>
-    <div class="swiper-slide"><img src="/img/screenshots/5.webp" alt="Screenshot 5"></div>
-    <div class="swiper-slide"><img src="/img/screenshots/6.webp" alt="Screenshot 6"></div>
-  </div>
+    <main id="main" class="download-wrapper">
+      <!-- Hero Download Section -->
+      <section id="sec1" class="hero-download">
+        <div class="download-badge">
+          <span class="material-symbols-outlined">android</span>
+          <span>v7.0.0 Release</span>
+        </div>
+        <h1 id="download">Download Sketchware Pro</h1>
+        <p>
+          Build, compile, and sign real Android apps right on your phone with
+          visual blocks or custom Java—no PC required.
+        </p>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"><span class="material-symbols-outlined nextprev">arrow_back</span></div>
-  <div class="swiper-button-next"><span class="material-symbols-outlined nextprev">arrow_forward</span></div>
+        <div class="hero-actions">
+          <md-filled-button href="/downloading?start=1">
+            Download APK
+          </md-filled-button>
+          <md-outlined-button
+            href="https://nightly.link/Sketchware-Pro/Sketchware-Pro/workflows/android/main"
+          >
+            Nightly Builds
+          </md-outlined-button>
+        </div>
+      </section>
 
-</div>
-<style>
-  .swiper-button-prev:after {
-    content: "";
-  }
-  .swiper-button-next:after {
-    content: "";
-  }
-  .nextprev {
-    color: var(--md-sys-color-primary);
-  }
-.swiper-slide {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-.swiper-slide img {
-    display: block;
-      width: 80%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 32px;
-    }
-    #main5 {
-  padding: 120px 0px;
-}
-#sec5 {
-  grid-template-columns: min(
-      calc(var(--col-width) * 12),
-      calc(100vw - 2 * var(--gutter))
-    ) auto;
-  -webkit-box-align: center;
-  align-items: center;
-  text-align: left;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  max-width: min(calc(var(--col-width) * 22), calc(100vw - 2 * var(--gutter)));
-  padding: 0px 70px;
-  display: flex;
-  place-items: start;
-  box-sizing: inherit;
-  unicode-bidi: isolate;
-  margin: auto;
-}
-#sec5 p {
-  width: 70%;
-  max-width: 700px;
-  font-size: 5rem;
-  font-weight: 400;
-  padding: 0px;
-  margin: 0px;
-  letter-spacing: -0.04em;
-}
-
-.material-button {
-  background-color: var(--md-sys-color-primary); /* Light background color */
-  color: var(--md-sys-color-on-primary); /* Text color */
-  border: 1px solid var(--md-sys-color-primary-container); /* Initial border */
-  border-radius: 9999px; /* Fully rounded corners */
-  padding: 24px 36px; /* Padding */
-  font-size: 40px; /* Font size */
-  font-weight: 500; /* Medium font weight */
-  cursor: pointer; /* Pointer cursor on hover */
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Space between text and arrow */
-}
-.material-button .arrow {
-  font-size: 40px;
-}
-.material-button:hover {
-  background-color: var(
-    --md-sys-color-primary-container-dim
-  ); /* Background on hover */
-  color: var(--md-sys-color-primary);
-  border: 1px solid var(--md-sys-color-on-secondary-container); /* Border on hover */
-}
-    /* CSS for desktops */
-    @media (min-width: 1024px) {
-      .swiper-slide img {
-        width: 80%;
-      }
-      div {
-        text-align: left;
-      }
-      #sec1 {
-        text-align: center;
-      }
-
-    }
-    h1 {
-        font-size: 4rem;
-      }
-      h2 {
-        font-size: 2.5rem;
-      }
-      p, li {
-        font-size: 1.2rem;
-      
-      }
-      ul {
-        text-align: left;
-      }
-    @media (min-width: 100px) and (max-width: 950px) {
-      h1 {
-        font-size: 2.3rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-      h2 {
-        font-size: 2rem;
-      }
-      #sec5 {
-    display: flex;
-    flex-direction: column;
-    padding: 0px 12px;
-  }
-  #sec5 p {
-    font-size: 3.25rem;
-    width: 100%;
-    max-width: unset;
-  }
-  .material-button {
-    font-size: 28px;
-    padding: 16px;
-  }
-  .material-button .arrow {
-    font-size: 24px;
-  }
-    }
-</style>
-    </div>
-    
-    <div style="background-color: var(--md-sys-color-surface-container); color: var(--md-sys-color-on-surface-container); margin: 12px; padding: 12px; border-radius: 24px;">
-      <h2 style="padding: 0px 20px">What's new</h2>
-      <ul style="padding: 0px 20px 0px 20px;">
-        <li>
-          The app now supports Material You - Google's design style for beautiful interfaces!
-        </li>
-        <li>Removed Deprecated Libraries such as OneSignal, DynamicLinks, and Facebook ads.</li>
-        <li>
-          Built-in libraries were updated to more recent versions!
-        </li>
-        <li>
-          Several crashes and bugs have been fixed!
-        </li>
-        <li>
-          And so much more!
-        </li>
-      </ul>
-    </div>
-    
-    <!-- Ad Placement 2 -->
-    <div style="margin: 20px; text-align: center;">
-      <div id="pf-23618-2" data-format="display" ><script>window.pubfuturetag = window.pubfuturetag || [];window.pubfuturetag.push({unit: "6a9a7f8d0bfeda003d985cbe", id: "pf-23618-2"})</script></div>
-    </div>
-
-    <div>
-      <h2 style="padding: 0px 20px">
-        Difference between Nightly and Release version
-      </h2>
-      <p style="padding: 0px 20px">
-        The Nightly builds are directly downloaded from the developers'
-        codebase. They are usually very unstable and not recommended. The
-        Release builds, however, are very stable to use and are chosen by
-        developers to be available to the public.
-      </p>
-    </div>
-    <div id="main5">
-      <div id="sec5">
-        <p id="bottomLoad">Start <span style="color: rgb(77, 119, 184);" id="dynamic-word">developing</span><br/> with Sketchware Pro<span class="vibrant" style="color: rgb(77, 119, 184);">.</span></p>
-        <div style="align-items: center; text-align: center; height: max-content; padding: 60px 0px;">
-          <a class="material-button vibrant" onclick="openLink('#main')">
-            Download
-          </a>
+      <!-- Ad Placement 1 -->
+      <div class="ad-slot-center">
+        <script
+          async
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          crossorigin="anonymous"
+        ></script>
+        <div id="300x250-1">
+          <script>
+            window.googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function () {
+              googletag
+                .defineSlot(
+                  "/21849154601,23375149959/Ad.Plus-300x250",
+                  [300, 250],
+                  "300x250-1"
+                )
+                .addService(googletag.pubads());
+              googletag.enableServices();
+              googletag.display("300x250-1");
+            });
+          </script>
+        </div>
       </div>
-      </div>
-    </div>
 
-    <!-- Ad Placement 3 -->
-    <div style="margin: 20px 0; text-align: center; width: 100%;">
-<div id="pf-23699-1" data-format="display" ><script>window.pubfuturetag = window.pubfuturetag || [];window.pubfuturetag.push({unit: "6aa233600bfeda003da527a3", id: "pf-23699-1"})</script></div>
+      <!-- Screenshots Showcase Card -->
+      <section class="m3-card">
+        <div class="card-header">
+          <div class="card-header-left">
+            <div class="card-icon">
+              <span class="material-symbols-outlined">photo_library</span>
+            </div>
+            <h2>Screenshots</h2>
+          </div>
+          <div class="swiper-controls">
+            <div class="swiper-button-prev swiper-nav-btn">
+              <span class="material-symbols-outlined">arrow_back</span>
+            </div>
+            <div class="swiper-button-next swiper-nav-btn">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </div>
         </div>
 
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/img/screenshots/1.webp" alt="Screenshot 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/screenshots/2.webp" alt="Screenshot 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/screenshots/3.webp" alt="Screenshot 3" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/screenshots/4.webp" alt="Screenshot 4" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/screenshots/5.webp" alt="Screenshot 5" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/screenshots/6.webp" alt="Screenshot 6" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+                  <!-- Legacy Devices Section -->
+      <section class="m3-card">
+        <div class="card-header">
+          <div class="card-header-left">
+            <div class="card-icon">
+              <span class="material-symbols-outlined">smartphone</span>
+            </div>
+            <h2>Running Android 7 or Lower?</h2>
+          </div>
+        </div>
+        <p>
+          Modern v7 builds require Android 8.0 (Oreo) or newer. If you're on an
+          older device running Android 7.1 (Nougat) or below, grab our dedicated
+          legacy-compatible build instead.
+        </p>
+        <div class="card-actions">
+          <md-filled-button href="/oldevice">
+            Get Legacy Build
+          </md-filled-button>
+        </div>
+      </section>
+
+      <!-- Ad Placement 2 -->
+            <div class="ad-slot-center">
+        <script
+          async
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          crossorigin="anonymous"
+        ></script>
+        <div id="300x250-1">
+          <script>
+            window.googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function () {
+              googletag
+                .defineSlot(
+                  "/21849154601,23375149959/Ad.Plus-300x250",
+                  [300, 250],
+                  "300x250-1"
+                )
+                .addService(googletag.pubads());
+              googletag.enableServices();
+              googletag.display("300x250-1");
+            });
+          </script>
+        </div>
+      </div>
+
+      <!-- What's New & Build Comparison Grid -->
+      <div class="content-grid">
+        <!-- What's New -->
+        <section class="m3-card">
+          <div>
+            <div class="card-header">
+              <div class="card-header-left">
+                <div class="card-icon">
+                  <span class="material-symbols-outlined">new_releases</span>
+                </div>
+                <h2>What's New</h2>
+              </div>
+            </div>
+            <ul class="changelog-list">
+              <li class="changelog-item">
+                <span class="material-symbols-outlined">palette</span>
+                <span
+                  >Full <strong>Material You</strong> support for modern,
+                  dynamic Android interfaces.</span
+                >
+              </li>
+              <li class="changelog-item">
+                <span class="material-symbols-outlined">cleaning_services</span>
+                <span
+                  >Removed deprecated libraries including OneSignal,
+                  DynamicLinks, and Facebook Ads.</span
+                >
+              </li>
+              <li class="changelog-item">
+                <span class="material-symbols-outlined">update</span>
+                <span
+                  >Updated built-in AndroidX and core libraries to newer
+                  versions.</span
+                >
+              </li>
+              <li class="changelog-item">
+                <span class="material-symbols-outlined">bug_report</span>
+                <span
+                  >Fixed major compiler crashes and editor bugs—plus much
+                  more.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Nightly vs Release -->
+        <section class="m3-card">
+          <div>
+            <div class="card-header">
+              <div class="card-header-left">
+                <div class="card-icon">
+                  <span class="material-symbols-outlined">compare_arrows</span>
+                </div>
+                <h2>Release vs. Nightly</h2>
+              </div>
+            </div>
+            <div class="build-boxes">
+              <div class="build-box">
+                <div class="build-box-header">
+                  <span class="build-box-title">Release Builds</span>
+                  <span class="build-tag stable">Recommended</span>
+                </div>
+                <p>
+                  Tested and chosen by the maintainers for public use. Best
+                  choice for reliable app development without unexpected
+                  breakage.
+                </p>
+              </div>
+              <div class="build-box">
+                <div class="build-box-header">
+                  <span class="build-box-title">Nightly Builds</span>
+                  <span class="build-tag nightly">Experimental</span>
+                </div>
+                <p>
+                  Compiled automatically from the latest developer commits.
+                  Includes bleeding-edge changes, but may be unstable and is not
+                  recommended for daily projects.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+            <!-- Ad Placement 3 -->
+            <div class="ad-slot-center">
+        <script
+          async
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          crossorigin="anonymous"
+        ></script>
+        <div id="300x250-1">
+          <script>
+            window.googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function () {
+              googletag
+                .defineSlot(
+                  "/21849154601,23375149959/Ad.Plus-300x250",
+                  [300, 250],
+                  "300x250-1"
+                )
+                .addService(googletag.pubads());
+              googletag.enableServices();
+              googletag.display("300x250-1");
+            });
+          </script>
+        </div>
+      </div>
+
+      <!-- Bottom Call-to-Action Banner -->
+      <section id="main5">
+        <div id="sec5">
+          <p id="bottomLoad">
+            Start
+            <span style="color: rgb(77, 119, 184)" id="dynamic-word"
+              >developing</span
+            ><br />
+            with Sketchware Pro<span
+              class="vibrant"
+              style="color: rgb(77, 119, 184)"
+              >.</span
+            >
+          </p>
+          <a class="material-button vibrant" href="/downloading?start=1">
+            <span>Download</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Ad Placement 3 -->
+            <!-- Ad Placement 2 -->
+            <div class="ad-slot-center">
+        <script
+          async
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          crossorigin="anonymous"
+        ></script>
+        <div id="300x250-1">
+          <script>
+            window.googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function () {
+              googletag
+                .defineSlot(
+                  "/21849154601,23375149959/Ad.Plus-300x250",
+                  [300, 250],
+                  "300x250-1"
+                )
+                .addService(googletag.pubads());
+              googletag.enableServices();
+              googletag.display("300x250-1");
+            });
+          </script>
+        </div>
+      </div>
+    </main>
+
     <script>
-      if (window.matchMedia('screen and (min-width: 950px)').matches) {
-        var slidePerView = 5;
-      } else {
-        var slidePerView = 1;
-      }
-      const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  rewind: true,
-  autoplay: {
-    delay: 3000,
-  },
-  grabCursor: true,
-  
-  slidesPerView: slidePerView,
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-});
+      const swiper = new Swiper(".swiper", {
+        direction: "horizontal",
+        rewind: true,
+        grabCursor: true,
+        spaceBetween: 16,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1.3,
+        breakpoints: {
+          600: {
+            slidesPerView: 2.5,
+          },
+          950: {
+            slidesPerView: 5,
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
     </script>
+
     <footer>
       <div id="footer">
         <div class="footer_1">
           <img
-            src="img/logo.webp"
+            src="/img/logo.webp"
             alt="SWPro logo"
             style="height: 60px; width: 60px"
           />
@@ -418,7 +871,6 @@
         </div>
         <div class="footer_col">
           <h3>Community</h3>
-
           <a href="https://discord.gg/Dc8ZDBRK5V">Discord</a>
           <a href="https://t.me/sketchwarepro">Telegram</a>
           <a href="https://github.com/Sketchware-Pro/Sketchware-Pro/discussions"
@@ -427,14 +879,21 @@
         </div>
         <div class="footer_col">
           <h3>More</h3>
-
           <a href="https://github.com/Sketchware-Pro/Sketchware-Pro">GitHub</a>
           <a href="/privacy">Privacy Policy</a>
           <a href="https://sketchware-pro.vercel.app/about">Disclaimer</a>
         </div>
       </div>
-          <p>Website by <a style="text-decoration: none; color:var(--md-sys-color-tertiary);" href="https://github.com/nicesapien">NiceSapien</a></p>
+      <p>
+        Website by
+        <a
+          style="text-decoration: none; color: var(--md-sys-color-tertiary)"
+          href="https://github.com/nicesapien"
+          >NiceSapien</a
+        >
+      </p>
     </footer>
+
     <script type="module" src="/script/download-bundle.js"></script>
   </body>
 </html>
