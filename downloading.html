@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-NFZPPW6N");
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-NFZPPW6N");
     </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
@@ -26,711 +27,631 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500&family=Poppins:ital,wght@0,500&family=Roboto:ital,wght@0,400;0,500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500&family=Poppins:ital,wght@0,500&family=Roboto:ital,wght@0,400;0,500&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <style>
-      a,
-      md-filled-button,
-      md-outlined-button {
-        -webkit-tap-highlight-color: transparent;
-      }
+        a,
+        md-filled-button,
+        md-outlined-button {
+            -webkit-tap-highlight-color: transparent;
+        }
 
-      a:focus:not(:focus-visible) {
-        outline: none;
-      }
+        a:focus:not(:focus-visible) {
+            outline: none;
+        }
 
-      .logo-link {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: inherit;
-        padding: 0;
-        margin: 0;
-      }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+        }
 
-      md-divider {
-        padding-left: 10px;
-        padding-right: 10px;
-        width: 100%;
-        box-sizing: border-box;
-        color: var(--md-sys-color-outline);
-      }
+        md-divider {
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--md-sys-color-outline);
+        }
 
-      .downloading-wrapper {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 84px 16px 32px 16px;
-        box-sizing: border-box;
-      }
+        .downloading-wrapper {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 84px 16px 32px 16px;
+            box-sizing: border-box;
+        }
 
-      .hero-download {
-        text-align: center;
-        padding: 36px 24px;
-        margin-bottom: 24px;
-        border-radius: 28px;
-        background-color: var(--md-sys-color-surface-container);
-        color: var(--md-sys-color-on-surface-container);
-      }
+        .hero-download {
+            text-align: center;
+            padding: 36px 24px;
+            margin-bottom: 24px;
+            border-radius: 28px;
+            background-color: var(--md-sys-color-surface-container);
+            color: var(--md-sys-color-on-surface-container);
+        }
 
-      .download-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 16px;
-        border-radius: 9999px;
-        background-color: var(--md-sys-color-primary-container);
-        color: var(--md-sys-color-on-primary-container);
-        font-size: 0.95rem;
-        font-weight: 500;
-        margin-bottom: 16px;
-      }
+        .download-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            background-color: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
 
-      .hero-download h1 {
-        font-size: 3.2rem;
-        margin: 0 0 12px 0;
-        line-height: 1.15;
-      }
-
-      .hero-download p {
-        font-size: 1.15rem;
-        max-width: 640px;
-        margin: 0 auto 20px auto;
-        opacity: 0.9;
-      }
-
-      .fallback-link {
-        color: var(--md-sys-color-primary);
-        font-weight: 500;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-
-      .content-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin-top: 20px;
-      }
-
-      .m3-card {
-        background-color: var(--md-sys-color-surface-container);
-        color: var(--md-sys-color-on-surface-container);
-        border-radius: 24px;
-        padding: 28px;
-        text-align: left;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .m3-card.full-span {
-        grid-column: 1 / -1;
-      }
-
-      .card-header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 16px;
-      }
-
-      .card-icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        background-color: var(--md-sys-color-primary-container);
-        color: var(--md-sys-color-on-primary-container);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .m3-card h2 {
-        font-size: 1.85rem;
-        margin: 0;
-      }
-
-      .m3-card p,
-      .m3-card li {
-        font-size: 1.08rem;
-        line-height: 1.6;
-      }
-
-      .install-steps {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .install-step {
-        display: flex;
-        align-items: flex-start;
-        gap: 14px;
-        padding: 16px;
-        border-radius: 18px;
-        background-color: var(
-          --md-sys-color-surface-container-high,
-          rgba(128, 128, 128, 0.08)
-        );
-      }
-
-      .step-num {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background-color: var(--md-sys-color-primary);
-        color: var(--md-sys-color-on-primary);
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-
-      .step-content > strong:first-child {
-        display: block;
-        font-size: 1.1rem;
-        margin-bottom: 4px;
-      }
-
-      .install-note {
-        margin-top: 16px;
-        padding: 12px 16px;
-        border-radius: 14px;
-        border-left: 4px solid var(--md-sys-color-primary);
-        background-color: var(
-          --md-sys-color-surface-container-high,
-          rgba(128, 128, 128, 0.08)
-        );
-        font-size: 0.98rem;
-      }
-
-      .link-list {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 8px;
-      }
-
-      .resource-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 14px 18px;
-        border-radius: 16px;
-        text-decoration: none;
-        color: inherit;
-        background-color: var(
-          --md-sys-color-surface-container-high,
-          rgba(128, 128, 128, 0.08)
-        );
-        transition: transform 0.15s ease, opacity 0.15s ease;
-      }
-
-      .resource-item:hover {
-        transform: translateY(-2px);
-        opacity: 0.92;
-      }
-
-      .resource-left {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .resource-title {
-        font-weight: 500;
-        font-size: 1.08rem;
-        display: block;
-      }
-
-      .resource-desc {
-        font-size: 0.92rem;
-        opacity: 0.8;
-      }
-
-      .card-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 20px;
-      }
-
-      @media (max-width: 950px) {
         .hero-download h1 {
-          font-size: 2.1rem;
+            font-size: 3.2rem;
+            margin: 0 0 12px 0;
+            line-height: 1.15;
         }
+
+        .hero-download p {
+            font-size: 1.15rem;
+            max-width: 640px;
+            margin: 0 auto 20px auto;
+            opacity: 0.9;
+        }
+
+        .fallback-link {
+            color: var(--md-sys-color-primary);
+            font-weight: 500;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
         .content-grid {
-          grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
         }
-        .install-steps {
-          grid-template-columns: 1fr;
-        }
+
         .m3-card {
-          padding: 20px;
+            background-color: var(--md-sys-color-surface-container);
+            color: var(--md-sys-color-on-surface-container);
+            border-radius: 24px;
+            padding: 28px;
+            text-align: left;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
+        .m3-card.full-span {
+            grid-column: 1 / -1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background-color: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
         .m3-card h2 {
-          font-size: 1.5rem;
+            font-size: 1.85rem;
+            margin: 0;
         }
-      }
+
+        .m3-card p,
+        .m3-card li {
+            font-size: 1.08rem;
+            line-height: 1.6;
+        }
+
+        .install-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .install-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px;
+            border-radius: 18px;
+            background-color: var(--md-sys-color-surface-container-high,
+                    rgba(128, 128, 128, 0.08));
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content>strong:first-child {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .install-note {
+            margin-top: 16px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            border-left: 4px solid var(--md-sys-color-primary);
+            background-color: var(--md-sys-color-surface-container-high,
+                    rgba(128, 128, 128, 0.08));
+            font-size: 0.98rem;
+        }
+
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .resource-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: inherit;
+            background-color: var(--md-sys-color-surface-container-high,
+                    rgba(128, 128, 128, 0.08));
+            transition: transform 0.15s ease, opacity 0.15s ease;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+        }
+
+        .resource-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .resource-title {
+            font-weight: 500;
+            font-size: 1.08rem;
+            display: block;
+        }
+
+        .resource-desc {
+            font-size: 0.92rem;
+            opacity: 0.8;
+        }
+
+        .card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 950px) {
+            .hero-download h1 {
+                font-size: 2.1rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .install-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .m3-card {
+                padding: 20px;
+            }
+
+            .m3-card h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
     <script>
-      var navOpen;
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "85%";
-        document.getElementById("backdrop").style.display = "block";
-        document.getElementById("main").style.opacity = "0.3";
-        navOpen = true;
-      }
-
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("backdrop").style.display = "none";
-        document.getElementById("main").style.opacity = "1";
-        navOpen = false;
-      }
-
-      const APK_URL =
-        "https://github.com/Sketchware-Pro/Sketchware-Pro/releases/download/v7.0.0/app-release.apk";
-
-      function triggerApkDownload() {
-        const a = document.createElement("a");
-        a.href = APK_URL;
-        a.setAttribute("download", "Sketchware-Pro-v7.0.0.apk");
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      }
-
-      window.addEventListener("DOMContentLoaded", function () {
-        const params = new URLSearchParams(window.location.search);
-        if (params.get("start") === "1") {
-          triggerApkDownload();
-          // Clean query string so refreshing /downloading won't re-trigger duplicate downloads
-          window.history.replaceState({}, document.title, window.location.pathname);
+        var navOpen;
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "85%";
+            document.getElementById("backdrop").style.display = "block";
+            document.getElementById("main").style.opacity = "0.3";
+            navOpen = true;
         }
-      });
-    </script>
-  </head>
 
-  <body id="bodi" class="light" style="width: 100%; box-sizing: border-box">
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("backdrop").style.display = "none";
+            document.getElementById("main").style.opacity = "1";
+            navOpen = false;
+        }
+
+        const APK_URL =
+            "https://github.com/Sketchware-Pro/Sketchware-Pro/releases/download/v7.0.0/app-release.apk";
+
+        function triggerApkDownload() {
+            const a = document.createElement("a");
+            a.href = APK_URL;
+            a.setAttribute("download", "Sketchware-Pro-v7.0.0.apk");
+            a.style.display = "none";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        window.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get("start") === "1") {
+                triggerApkDownload();
+                // Clean query string so refreshing /downloading won't re-trigger duplicate downloads
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+    </script>
+</head>
+
+<body id="bodi" class="light" style="width: 100%; box-sizing: border-box">
     <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-NFZPPW6N"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFZPPW6N" height="0" width="0"
+            style="display: none; visibility: hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-      <nav>
-        <div class="header-container">
-          <div class="logo">
-            <img src="/img/logo.webp" alt="SW Pro Logo" onclick="openNav()" />
-            <div style="display: flex; justify-content: center; align-items: center">
-              <a href="/" class="logo-link">
-                <p style="margin-left: 8px; font-weight: 400">
-                  Sketchware Pro
-                </p>
-              </a>
+        <nav>
+            <div class="header-container">
+                <div class="logo">
+                    <img src="/img/logo.webp" alt="SW Pro Logo" onclick="openNav()" />
+                    <div style="display: flex; justify-content: center; align-items: center">
+                        <a href="/" class="logo-link">
+                            <p style="margin-left: 8px; font-weight: 400">
+                                Sketchware Pro
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://sketchware-pro.vercel.app/docs">Docs</a></li>
+                    <li><a href="https://sketchware-pro.vercel.app/blog">Blog</a></li>
+                    <li><a href="/team">About</a></li>
+                </ul>
             </div>
-          </div>
-          <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="https://sketchware-pro.vercel.app/docs">Docs</a></li>
-            <li><a href="https://sketchware-pro.vercel.app/blog">Blog</a></li>
-            <li><a href="/team">About</a></li>
-          </ul>
-        </div>
-      </nav>
+        </nav>
     </header>
 
     <!-- Backdrop when mobile navbar is open -->
-    <div
-      class="backdrop-container"
-      id="backdrop"
-      onclick="if(navOpen){closeNav()}"
-    ></div>
+    <div class="backdrop-container" id="backdrop" onclick="if(navOpen){closeNav()}"></div>
 
     <!-- Mobile Navigation Drawer -->
     <div id="mySidenav" class="sidenav-container">
-      <span class="drawer-close-button">
-        <div style="display: flex; width: 100%">
-          <img
-            src="/img/swpro.svg"
-            alt="SW Pro Logo"
-            style="height: 75%; width: 75%; color: white"
-          />
-        </div>
-      </span>
+        <span class="drawer-close-button">
+            <div style="display: flex; width: 100%">
+                <img src="/img/swpro.svg" alt="SW Pro Logo" style="height: 75%; width: 75%; color: white" />
+            </div>
+        </span>
 
-      <md-divider></md-divider>
-      <div id="links">
-        <a href="/">
-          <span class="material-symbols-outlined">home</span> Home</a
-        >
-        <a href="/download" id="homeLink"
-          ><span class="material-symbols-outlined">get_app</span>Download</a
-        >
-        <a href="https://sketchware-pro.vercel.app/docs"
-          ><span class="material-symbols-outlined">menu_book</span>Docs</a
-        >
-        <a href="https://sketchware-pro.vercel.app/blog"
-          ><span class="material-symbols-outlined">library_books</span>Blog</a
-        >
         <md-divider></md-divider>
-        <p>About</p>
-        <a href="/team"
-          ><span class="material-symbols-outlined">groups</span>Team</a
-        >
-        <a href="/about"
-          ><span class="material-symbols-outlined">warning</span>Disclaimer</a
-        >
-      </div>
+        <div id="links">
+            <a href="/">
+                <span class="material-symbols-outlined">home</span> Home</a>
+            <a href="/download" id="homeLink"><span class="material-symbols-outlined">get_app</span>Download</a>
+            <a href="https://sketchware-pro.vercel.app/docs"><span
+                    class="material-symbols-outlined">menu_book</span>Docs</a>
+            <a href="https://sketchware-pro.vercel.app/blog"><span
+                    class="material-symbols-outlined">library_books</span>Blog</a>
+            <md-divider></md-divider>
+            <p>About</p>
+            <a href="/team"><span class="material-symbols-outlined">groups</span>Team</a>
+            <a href="/about"><span class="material-symbols-outlined">warning</span>Disclaimer</a>
+        </div>
     </div>
 
     <main id="main" class="downloading-wrapper">
-      <!-- Hero Download Status -->
-      <section class="hero-download">
-        <div class="download-badge">
-          <span class="material-symbols-outlined">downloading</span>
-          <span>v7.0.0 Release</span>
-        </div>
-        <h1>Your download has started!</h1>
-        <p>
-          Thank you for downloading <strong>Sketchware Pro</strong>. If your
-          download doesn't begin automatically within a few seconds, just click
-          the button below to download it now. If it still doesn't work, try the Download Mirror button.
-        </p>
-        <div
-          style="
+        <!-- Hero Download Status -->
+        <section class="hero-download">
+            <div class="download-badge">
+                <span class="material-symbols-outlined">downloading</span>
+                <span>v7.0.0 Release</span>
+            </div>
+            <h1>Your download has started!</h1>
+            <p>
+                Thank you for downloading <strong>Sketchware Pro</strong>. If your
+                download doesn't begin automatically within a few seconds, just click
+                the button below to download it now. If it still doesn't work, try the Download Mirror button.
+            </p>
+            <div style="
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 12px;
-          "
-        >
-          <md-filled-button
-            href="https://github.com/Sketchware-Pro/Sketchware-Pro/releases/download/v7.0.0/app-release.apk"
-            download="Sketchware-Pro-v7.0.0.apk"
-          >
-            Download Now
-          </md-filled-button>
-          <md-outlined-button href="https://cdn.nicesapien.dev/sketchware-pro.apk">
-            Download Mirror
-          </md-outlined-button>
+          ">
+                <md-filled-button
+                    href="https://github.com/Sketchware-Pro/Sketchware-Pro/releases/download/v7.0.0/app-release.apk"
+                    download="Sketchware-Pro-v7.0.0.apk">
+                    Download Now
+                </md-filled-button>
+                <md-outlined-button href="https://cdn.nicesapien.dev/sketchware-pro.apk">
+                    Download Mirror
+                </md-outlined-button>
+            </div>
+        </section>
+
+        <!-- Ad Placement 1 -->
+        <div style="margin: 20px auto; text-align: center">
+            <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+            <div id="300x250-1">
+                <script>
+                    window.googletag = window.googletag || { cmd: [] };
+                    googletag.cmd.push(function () {
+                        googletag.defineSlot('/21849154601,23375149959/Ad.Plus-300x250', [300, 250], '300x250-1').addService(googletag.pubads());
+                        googletag.enableServices();
+                        googletag.display('300x250-1');
+                    });
+                </script>
+            </div>
         </div>
-      </section>
 
-      <!-- Ad Placement 1 -->
-      <div style="margin: 20px auto; text-align: center">
-        <script
-          async
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-          crossorigin="anonymous"
-        ></script>
-        <div id="300x250-1">
-          <script>
-            window.googletag = window.googletag || { cmd: [] };
-            googletag.cmd.push(function () {
-              googletag
-                .defineSlot(
-                  "/21849154601,23375149959/Ad.Plus-300x250",
-                  [300, 250],
-                  "300x250-1"
-                )
-                .addService(googletag.pubads());
-              googletag.enableServices();
-              googletag.display("300x250-1");
-            });
-          </script>
+        <!-- Post-Download Content Grid -->
+        <div class="content-grid">
+            <!-- How to Install -->
+            <section class="m3-card full-span">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">install_mobile</span>
+                    </div>
+                    <h2>How to Install Sketchware Pro</h2>
+                </div>
+
+                <ol class="install-steps">
+                    <li class="install-step">
+                        <span class="step-num">1</span>
+                        <div class="step-content">
+                            <strong>Locate the APK file</strong>
+                            Open your browser's <em>Downloads</em> tab or your device's
+                            <strong>Files</strong> app and find
+                            <code>app-release.apk</code>(<code>sketchware-pro.apk</code> if downloaded from the mirror).
+                        </div>
+                    </li>
+                    <li class="install-step">
+                        <span class="step-num">2</span>
+                        <div class="step-content">
+                            <strong>Allow Unknown Sources</strong>
+                            Tap the APK file. If prompted, open <strong>Settings</strong>
+                            and toggle on <em>Allow from this source</em> for your browser
+                            or file manager.
+                        </div>
+                    </li>
+                    <li class="install-step">
+                        <span class="step-num">3</span>
+                        <div class="step-content">
+                            <strong>Complete Installation</strong>
+                            Go back and tap <strong>Install</strong>. If Google Play
+                            Protect shows a prompt for sideloaded apps, tap
+                            <em>More details &rarr; Install anyway</em>.
+                        </div>
+                    </li>
+                    <li class="install-step">
+                        <span class="step-num">4</span>
+                        <div class="step-content">
+                            <strong>Grant Storage Permissions</strong>
+                            Launch Sketchware Pro and allow file/storage access so the app
+                            can compile APKs and save your projects.
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="install-note">
+                    <strong>Running Android 7 or lower?</strong> Use our legacy-compatible
+                    build on the
+                    <a href="/oldevice" class="fallback-link">Old Device page</a>.
+                </div>
+            </section>
+
+            <!-- Sketchware Pro Course -->
+            <section class="m3-card">
+                <div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <h2>Sketchware Pro Course</h2>
+                    </div>
+                    <p>
+                        New to visual Android development? Follow our beginner-friendly
+                        guides and tutorials to learn block logic, Material UI layouts,
+                        custom Java blocks, and APK signing from scratch.
+                    </p>
+                    <div class="link-list">
+                        <a href="https://sketchware-pro.vercel.app/docs" class="resource-item">
+                            <div class="resource-left">
+                                <span class="material-symbols-outlined">auto_stories</span>
+                                <div>
+                                    <span class="resource-title">Getting Started Guide</span>
+                                    <span class="resource-desc">Build and compile your first Android app step by
+                                        step</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a href="https://sketchware-pro.vercel.app/blog" class="resource-item">
+                            <div class="resource-left">
+                                <span class="material-symbols-outlined">article</span>
+                                <div>
+                                    <span class="resource-title">Tutorials &amp; Dev Blog</span>
+                                    <span class="resource-desc">Deep dives into libraries, Firebase, and new v7
+                                        features</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <md-filled-button href="/course">
+                        Start Learning
+                    </md-filled-button>
+                </div>
+            </section>
+
+            <!-- Helpful Links & Community -->
+            <section class="m3-card">
+                <div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <span class="material-symbols-outlined">forum</span>
+                        </div>
+                        <h2>Helpful Links &amp; Community</h2>
+                    </div>
+                    <p>
+                        Stuck on a build error or want to share your latest app? Connect
+                        with thousands of Sketchware Pro creators and developers.
+                    </p>
+                    <div class="link-list">
+                        <a href="https://discord.gg/Dc8ZDBRK5V" class="resource-item">
+                            <div class="resource-left">
+                                <span class="material-symbols-outlined">chat</span>
+                                <div>
+                                    <span class="resource-title">Discord Server</span>
+                                    <span class="resource-desc">Live help, project showcases, and announcements</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                        <a href="https://t.me/sketchwarepro" class="resource-item">
+                            <div class="resource-left">
+                                <span class="material-symbols-outlined">send</span>
+                                <div>
+                                    <span class="resource-title">Telegram Channel</span>
+                                    <span class="resource-desc">Release alerts and community chat</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                        <a href="https://github.com/Sketchware-Pro/Sketchware-Pro/discussions" class="resource-item">
+                            <div class="resource-left">
+                                <span class="material-symbols-outlined">help_outline</span>
+                                <div>
+                                    <span class="resource-title">GitHub Discussions</span>
+                                    <span class="resource-desc">Q&amp;A, feature ideas, and troubleshooting</span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ad Placement 2 -->
+            <div style="margin: 20px auto; text-align: center">
+                <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+                    crossorigin="anonymous"></script>
+                <div id="300x250-2">
+                    <script>
+                        window.googletag = window.googletag || { cmd: [] };
+                        googletag.cmd.push(function () {
+                            googletag.defineSlot('/21849154601,23375149959/Ad.Plus-300x250', [300, 250], '300x250-2').addService(googletag.pubads());
+                            googletag.enableServices();
+                            googletag.display('300x250-2');
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <!-- Support the Maintainers -->
+            <section class="m3-card full-span">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </div>
+                    <h2>Support the Maintainers</h2>
+                </div>
+                <p>
+                    Sketchware Pro is completely free and open-source software maintained
+                    by volunteers. You can help keep the project thriving by starring the
+                    repository on GitHub, reporting bugs, contributing pull requests, or
+                    supporting the team behind the project.
+                </p>
+                <div class="card-actions">
+                    <md-filled-button href="https://github.com/Sketchware-Pro/Sketchware-Pro">
+                        Star on GitHub
+                    </md-filled-button>
+                    <md-outlined-button href="https://github.com/Sketchware-Pro/Sketchware-Pro/issues">
+                        Report an Issue
+                    </md-outlined-button>
+                    <md-outlined-button href="/team">
+                        Meet the Team
+                    </md-outlined-button>
+                </div>
+            </section>
         </div>
-      </div>
-
-      <!-- Post-Download Content Grid -->
-      <div class="content-grid">
-        <!-- How to Install -->
-        <section class="m3-card full-span">
-          <div class="card-header">
-            <div class="card-icon">
-              <span class="material-symbols-outlined">install_mobile</span>
-            </div>
-            <h2>How to Install Sketchware Pro</h2>
-          </div>
-
-          <ol class="install-steps">
-            <li class="install-step">
-              <span class="step-num">1</span>
-              <div class="step-content">
-                <strong>Locate the APK file</strong>
-                Open your browser's <em>Downloads</em> tab or your device's
-                <strong>Files</strong> app and find
-                <code>app-release.apk</code>(<code>sketchware-pro.apk</code> if downloaded from the mirror).
-              </div>
-            </li>
-            <li class="install-step">
-              <span class="step-num">2</span>
-              <div class="step-content">
-                <strong>Allow Unknown Sources</strong>
-                Tap the APK file. If prompted, open <strong>Settings</strong>
-                and toggle on <em>Allow from this source</em> for your browser
-                or file manager.
-              </div>
-            </li>
-            <li class="install-step">
-              <span class="step-num">3</span>
-              <div class="step-content">
-                <strong>Complete Installation</strong>
-                Go back and tap <strong>Install</strong>. If Google Play
-                Protect shows a prompt for sideloaded apps, tap
-                <em>More details &rarr; Install anyway</em>.
-              </div>
-            </li>
-            <li class="install-step">
-              <span class="step-num">4</span>
-              <div class="step-content">
-                <strong>Grant Storage Permissions</strong>
-                Launch Sketchware Pro and allow file/storage access so the app
-                can compile APKs and save your projects.
-              </div>
-            </li>
-          </ol>
-
-          <div class="install-note">
-            <strong>Running Android 7 or lower?</strong> Use our legacy-compatible
-            build on the
-            <a href="/oldevice" class="fallback-link">Old Device page</a>.
-          </div>
-        </section>
-
-        <!-- Sketchware Pro Course -->
-        <section class="m3-card">
-          <div>
-            <div class="card-header">
-              <div class="card-icon">
-                <span class="material-symbols-outlined">school</span>
-              </div>
-              <h2>Sketchware Pro Course</h2>
-            </div>
-            <p>
-              New to visual Android development? Follow our beginner-friendly
-              guides and tutorials to learn block logic, Material UI layouts,
-              custom Java blocks, and APK signing from scratch.
-            </p>
-            <div class="link-list">
-              <a
-                href="https://sketchware-pro.vercel.app/docs"
-                class="resource-item"
-              >
-                <div class="resource-left">
-                  <span class="material-symbols-outlined">auto_stories</span>
-                  <div>
-                    <span class="resource-title">Getting Started Guide</span>
-                    <span class="resource-desc"
-                      >Build and compile your first Android app step by step</span
-                    >
-                  </div>
-                </div>
-                <span class="material-symbols-outlined">arrow_forward</span>
-              </a>
-              <a
-                href="https://sketchware-pro.vercel.app/blog"
-                class="resource-item"
-              >
-                <div class="resource-left">
-                  <span class="material-symbols-outlined">article</span>
-                  <div>
-                    <span class="resource-title">Tutorials &amp; Dev Blog</span>
-                    <span class="resource-desc"
-                      >Deep dives into libraries, Firebase, and new v7 features</span
-                    >
-                  </div>
-                </div>
-                <span class="material-symbols-outlined">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-          <div class="card-actions">
-            <md-filled-button href="/course">
-              Start Learning
-            </md-filled-button>
-          </div>
-        </section>
-
-        <!-- Helpful Links & Community -->
-        <section class="m3-card">
-          <div>
-            <div class="card-header">
-              <div class="card-icon">
-                <span class="material-symbols-outlined">forum</span>
-              </div>
-              <h2>Helpful Links &amp; Community</h2>
-            </div>
-            <p>
-              Stuck on a build error or want to share your latest app? Connect
-              with thousands of Sketchware Pro creators and developers.
-            </p>
-            <div class="link-list">
-              <a href="https://discord.gg/Dc8ZDBRK5V" class="resource-item">
-                <div class="resource-left">
-                  <span class="material-symbols-outlined">chat</span>
-                  <div>
-                    <span class="resource-title">Discord Server</span>
-                    <span class="resource-desc"
-                      >Live help, project showcases, and announcements</span
-                    >
-                  </div>
-                </div>
-                <span class="material-symbols-outlined">open_in_new</span>
-              </a>
-              <a href="https://t.me/sketchwarepro" class="resource-item">
-                <div class="resource-left">
-                  <span class="material-symbols-outlined">send</span>
-                  <div>
-                    <span class="resource-title">Telegram Channel</span>
-                    <span class="resource-desc"
-                      >Release alerts and community chat</span
-                    >
-                  </div>
-                </div>
-                <span class="material-symbols-outlined">open_in_new</span>
-              </a>
-              <a
-                href="https://github.com/Sketchware-Pro/Sketchware-Pro/discussions"
-                class="resource-item"
-              >
-                <div class="resource-left">
-                  <span class="material-symbols-outlined">help_outline</span>
-                  <div>
-                    <span class="resource-title">GitHub Discussions</span>
-                    <span class="resource-desc"
-                      >Q&amp;A, feature ideas, and troubleshooting</span
-                    >
-                  </div>
-                </div>
-                <span class="material-symbols-outlined">open_in_new</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Ad Placement 2 -->
-         <div style="margin: 20px auto; text-align: center">
-        <script
-          async
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-          crossorigin="anonymous"
-        ></script>
-        <div id="300x250-1">
-          <script>
-            window.googletag = window.googletag || { cmd: [] };
-            googletag.cmd.push(function () {
-              googletag
-                .defineSlot(
-                  "/21849154601,23375149959/Ad.Plus-300x250",
-                  [300, 250],
-                  "300x250-1"
-                )
-                .addService(googletag.pubads());
-              googletag.enableServices();
-              googletag.display("300x250-1");
-            });
-          </script>
-        </div>
-      </div>
-
-        <!-- Support the Maintainers -->
-        <section class="m3-card full-span">
-          <div class="card-header">
-            <div class="card-icon">
-              <span class="material-symbols-outlined">favorite</span>
-            </div>
-            <h2>Support the Maintainers</h2>
-          </div>
-          <p>
-            Sketchware Pro is completely free and open-source software maintained
-            by volunteers. You can help keep the project thriving by starring the
-            repository on GitHub, reporting bugs, contributing pull requests, or
-            supporting the team behind the project.
-          </p>
-          <div class="card-actions">
-            <md-filled-button
-              href="https://github.com/Sketchware-Pro/Sketchware-Pro"
-            >
-              Star on GitHub
-            </md-filled-button>
-            <md-outlined-button
-              href="https://github.com/Sketchware-Pro/Sketchware-Pro/issues"
-            >
-              Report an Issue
-            </md-outlined-button>
-            <md-outlined-button href="/team">
-              Meet the Team
-            </md-outlined-button>
-          </div>
-        </section>
-      </div>
     </main>
 
     <footer>
-      <div id="footer">
-        <div class="footer_1">
-          <img
-            src="/img/logo.webp"
-            alt="SWPro logo"
-            style="height: 60px; width: 60px"
-          />
-          <p style="font-size: 18px; width: 70%">
-            Sketchware Pro is a powerful app development tool that allows you to
-            build apps without having to write even a single line of code.
-          </p>
+        <div id="footer">
+            <div class="footer_1">
+                <img src="/img/logo.webp" alt="SWPro logo" style="height: 60px; width: 60px" />
+                <p style="font-size: 18px; width: 70%">
+                    Sketchware Pro is a powerful app development tool that allows you to
+                    build apps without having to write even a single line of code.
+                </p>
+            </div>
+            <div class="footer_col">
+                <h3>Sketchware Pro</h3>
+                <a href="/download">Download</a>
+                <a href="https://sketchware-pro.vercel.app/docs">Documentation</a>
+                <a href="https://sketchware-pro.vercel.app/blog">Blog</a>
+            </div>
+            <div class="footer_col">
+                <h3>Community</h3>
+                <a href="https://discord.gg/Dc8ZDBRK5V">Discord</a>
+                <a href="https://t.me/sketchwarepro">Telegram</a>
+                <a href="https://github.com/Sketchware-Pro/Sketchware-Pro/discussions">GitHub Discussions</a>
+            </div>
+            <div class="footer_col">
+                <h3>More</h3>
+                <a href="https://github.com/Sketchware-Pro/Sketchware-Pro">GitHub</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="https://sketchware-pro.vercel.app/about">Disclaimer</a>
+            </div>
         </div>
-        <div class="footer_col">
-          <h3>Sketchware Pro</h3>
-          <a href="/download">Download</a>
-          <a href="https://sketchware-pro.vercel.app/docs">Documentation</a>
-          <a href="https://sketchware-pro.vercel.app/blog">Blog</a>
-        </div>
-        <div class="footer_col">
-          <h3>Community</h3>
-          <a href="https://discord.gg/Dc8ZDBRK5V">Discord</a>
-          <a href="https://t.me/sketchwarepro">Telegram</a>
-          <a href="https://github.com/Sketchware-Pro/Sketchware-Pro/discussions"
-            >GitHub Discussions</a
-          >
-        </div>
-        <div class="footer_col">
-          <h3>More</h3>
-          <a href="https://github.com/Sketchware-Pro/Sketchware-Pro">GitHub</a>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="https://sketchware-pro.vercel.app/about">Disclaimer</a>
-        </div>
-      </div>
-      <p>
-        Website by
-        <a
-          style="text-decoration: none; color: var(--md-sys-color-tertiary)"
-          href="https://github.com/nicesapien"
-          >NiceSapien</a
-        >
-      </p>
+        <p>
+            Website by
+            <a style="text-decoration: none; color: var(--md-sys-color-tertiary)"
+                href="https://github.com/nicesapien">NiceSapien</a>
+        </p>
     </footer>
 
     <script type="module" src="/script/download-bundle.js"></script>
-  </body>
+</body>
+
 </html>
